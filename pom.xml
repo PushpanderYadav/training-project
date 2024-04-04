@@ -230,6 +230,7 @@ Bundle-DocURL:
                         <useSystemClassLoader>false</useSystemClassLoader>
                     </configuration>
                 </plugin>
+
                 <!-- Maven Failsafe Plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
