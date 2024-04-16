@@ -6,8 +6,7 @@ pipeline{
     stages{
         stage("checkout"){
             steps{
-                echo"this is branch ${params.choice}"
-                git url:"https://github.com/PushpanderYadav/training-project",branch:"${params.choice}"
+                git url:"https://github.com/PushpanderYadav/training-project"
             }
         }
             stage("compile"){
