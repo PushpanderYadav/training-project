@@ -1,5 +1,6 @@
 package com.training.aem.core.servlets;
 
+import com.day.cq.workflow.WorkflowException;
 import com.day.cq.workflow.WorkflowSession;
 import com.day.cq.workflow.exec.WorkflowData;
 import com.day.cq.workflow.model.WorkflowModel;
@@ -31,21 +32,19 @@ public class WorkFlowTriggering extends SlingSafeMethodsServlet {
             {
                 WorkflowSession workflowSession=resolver.adaptTo(WorkflowSession.class);
                 if(workflowSession!=null) {
-                        try {
                             WorkflowModel workflowModel = workflowSession.getModel("/var/workflow/models/testingworkflow");
-                            WorkflowData workflowData = (WorkflowData) workflowSession.getModel("JCR_PATH", payload);
+                            WorkflowData workflowData =workflowSession.newWorkflowData("JCR_PATH", payload);
                             workflowSession.startWorkflow(workflowModel,workflowData);
-                        }catch (Exception e)
-                        {
-                            LOGGER.info(e.getMessage());
                         }
                         response.setContentType("application/json");
                         response.getWriter().write(status);
                 }
-            }
-
+            } catch (Exception e) {
+            LOGGER.info("error",e);
         }
+
+    }
 
 
     }
-}
+
