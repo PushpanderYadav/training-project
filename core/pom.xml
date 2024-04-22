@@ -92,6 +92,12 @@ Import-Package: javax.annotation;version=0.0.0,*
             <artifactId>org.osgi.annotation.versioning</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-bundle</artifactId>
+            <version>5.2.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.annotation.bundle</artifactId>
         </dependency>

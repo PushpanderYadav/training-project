@@ -55,6 +55,18 @@
                     <skipSubPackageValidation>true</skipSubPackageValidation>
                     <embeddeds>
                         <embedded>
+                            <groupId>com.adobe.acs</groupId>
+                            <artifactId>acs-aem-commons-ui.apps</artifactId>
+                            <type>zip</type>
+                            <target>/apps/training-project-packages/application/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>com.adobe.acs</groupId>
+                            <artifactId>acs-aem-commons-ui.content</artifactId>
+                            <type>zip</type>
+                            <target>/apps/training-project-packages/content/install</target>
+                        </embedded>
+                        <embedded>
                             <groupId>com.training.aem</groupId>
                             <artifactId>training-project.ui.apps</artifactId>
                             <type>zip</type>
@@ -201,7 +213,21 @@
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-ui.content</artifactId>
+            <version>5.2.0</version>
+            <type>zip</type>
+            <classifier>min</classifier>
+        </dependency>
 
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-ui.apps</artifactId>
+            <version>5.2.0</version>
+            <type>zip</type>
+            <classifier>min</classifier>
+        </dependency>
         <dependency>
             <groupId>com.adobe.cq</groupId>
             <artifactId>core.wcm.components.content</artifactId>
